@@ -12,19 +12,19 @@ Built with Blueprint, Hackclub. It is a Macropad with 11 keys, a Rotary Encoder,
 ### Specifications
 
 BOM: 
-- 10x Cherry MX Switches
+- 11x Cherry MX Switches
 - 1x XIAO RP2040
 - 10x Blank DSA Keycaps
 - 1x 0.91 128x32 OLED
-- 2x EC11 Rotary Encoders
+- 1x EC11 Rotary Encoder
 - 4x M3x16 Bolt
 - 4x M3 Heatset
 
 Others:
 - KMK Firmware
-- macpad_print_cover.stl
-- macpad_print_plate.stl
-- macpad_print_base.stl
+- macpad_print_cover_new.stl
+- macpad_print_plate_new.stl
+- macpad_print_base_new.stl
 - Custom PCB
 
 Schematic            |  PCB
