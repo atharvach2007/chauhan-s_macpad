@@ -11,58 +11,43 @@ keyboard = KMKKeyboard()
 # Matrix (4 rows x 3 columns)
 # -------------------------------------------------
 keyboard.row_pins = (
-    board.GP1,   # Row 1
-    board.GP2,   # Row 2
-    board.GP3,   # Row 3
-    board.GP4,   # Row 4
+    board.GP1,
+    board.GP2,
+    board.GP3,
+    board.GP4,
 )
 
 keyboard.col_pins = (
-    board.GP27,  # Col 1
-    board.GP28,  # Col 2
-    board.GP29,  # Col 3
+    board.GP27,
+    board.GP28,
+    board.GP29,
 )
 
 keyboard.diode_orientation = keyboard.DIODE_COL2ROW
 
 # -------------------------------------------------
-# Keymap (row-major order)
+# Keymap (row-major)
 # -------------------------------------------------
 keyboard.keymap = [[
-    KC.LCTRL,              KC.MEDIA_PLAY_PAUSE, KC.LALT,        # Row 1
-    KC.MEDIA_REWIND,       KC.F11,               KC.MEDIA_FAST_FORWARD,  # Row 2
-    KC.AUDIO_MUTE,         KC.UP,                KC.MEDIA_SUBTITLE,       # Row 3
-    KC.LEFT,               KC.DOWN,              KC.RIGHT,               # Row 4
+    KC.LCTRL,          KC.LALT,               KC.AUDIO_MUTE,      # Row 1
+    KC.MEDIA_SUBTITLE, KC.MEDIA_PLAY_PAUSE,   KC.F11,             # Row 2
+    KC.PGUP,           KC.UP,                 KC.PGDN,            # Row 3
+    KC.LEFT,           KC.DOWN,               KC.RIGHT,           # Row 4
 ]]
 
 # -------------------------------------------------
-# Encoder gating keys (matrix indices)
-# -------------------------------------------------
-ENC_BRIGHTNESS_KEY = 0   # (Row 1, Col 1)
-ENC_VOLUME_KEY     = 2   # (Row 1, Col 3)
-
-# -------------------------------------------------
-# Encoder setup (A/B shared)
+# Encoder (volume control)
 # -------------------------------------------------
 encoder = EncoderHandler()
 encoder.pins = (
     (board.GP26, board.GP0),
 )
 
-def enc_cw(keyboard):
-    if keyboard.key_states[ENC_BRIGHTNESS_KEY]:
-        keyboard.tap_key(KC.BRIGHTNESS_UP)
-    elif keyboard.key_states[ENC_VOLUME_KEY]:
-        keyboard.tap_key(KC.VOLU)
-
-def enc_ccw(keyboard):
-    if keyboard.key_states[ENC_BRIGHTNESS_KEY]:
-        keyboard.tap_key(KC.BRIGHTNESS_DOWN)
-    elif keyboard.key_states[ENC_VOLUME_KEY]:
-        keyboard.tap_key(KC.VOLD)
-
 encoder.map = [
-    (enc_cw, enc_ccw),
+    (
+        KC.VOLU,   # Clockwise
+        KC.VOLD,   # Counter-clockwise
+    ),
 ]
 
 keyboard.modules.append(encoder)
