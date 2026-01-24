@@ -1,12 +1,12 @@
 # Chauhan's Macropad
 A macropad purpose built for me.
-Built with Blueprint, Hackclub. It is a Macropad with 10 keys, 2 Rotary Encoders, 1 0.91 128x32 OLED and the SEEED XIAO RP2040.
+Built with Blueprint, Hackclub. It is a Macropad with 11 keys, a Rotary Encoder, 1 0.91 128x32 OLED and the SEEED XIAO RP2040.
 
 ### Images
-![View 1](assets/1.png)
-![View 2](assets/2.png)
-![View 3](assets/3.png)
-![View 4](assets/4.png)
+![View 1](assets/5.png)
+![View 2](assets/6.png)
+![View 3](assets/7.png)
+![View 4](assets/8.png)
 
 
 ### Specifications
@@ -29,4 +29,4 @@ Others:
 
 Schematic            |  PCB
 :-------------------------:|:-------------------------:|
-![Circuit](assets/circuit1.png)     |        ![PCB](assets/pcb.png)
+![Circuit](assets/circuit1_new.png)     |        ![PCB](assets/pcb_new.png)
